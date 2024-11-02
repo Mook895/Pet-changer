@@ -1,0 +1,14 @@
+lua
+local Pets = require(game:GetService("ReplicatedStorage").Library.Directory.Pets)
+
+local fromPet = "Cat" -- put your pet name
+    local toPet = "Huge Cat" -- Type the name of the pet you want
+    
+    if Pets[fromPet] and Pets[toPet] then
+        for i, v in pairs(Pets[fromPet]) do
+            Pets[fromPet][i] = nil
+        end
+        for i, v in pairs(Pets[toPet]) do
+            Pets[fromPet][i] = v
+        end
+    end
